@@ -102,7 +102,7 @@
       <img class="icon" src="assets/icon.png" alt="KinScan app icon" width="88" height="88">
       <h1>Who does the baby look like?</h1>
       <p class="lead">KinScan compares faces with AI and shows exactly where two people match: eyes, nose, mouth, face shape and more. Settle the “Mom or Dad?” debate in seconds.</p>
-      <a class="badge" href="https://play.google.com/store/apps/details?id=com.optimnetlab.facialapp&amp;referrer=utm_source%3Dkinscan_site%26utm_medium%3Dlanding" rel="noopener">
+      <a class="badge" data-medium="landing_hero" href="https://play.google.com/store/apps/details?id=com.optimnetlab.facialapp&amp;referrer=utm_source%3Dkinscan_site%26utm_medium%3Dlanding_hero" rel="noopener">
         <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
       </a>
       <p class="sub">Android · Free credits included to start · Photos are never stored</p>
@@ -194,7 +194,7 @@
   <div class="wrap">
     <h2>Find out who the baby takes after</h2>
     <p class="intro" style="margin-left:auto;margin-right:auto">Free to install. Your first family comparison is on us.</p>
-    <a class="badge" href="https://play.google.com/store/apps/details?id=com.optimnetlab.facialapp&amp;referrer=utm_source%3Dkinscan_site%26utm_medium%3Dlanding_footer" rel="noopener">
+    <a class="badge" data-medium="landing_footer" href="https://play.google.com/store/apps/details?id=com.optimnetlab.facialapp&amp;referrer=utm_source%3Dkinscan_site%26utm_medium%3Dlanding_footer" rel="noopener">
       <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
     </a>
   </div>
@@ -213,5 +213,27 @@
   </div>
 </footer>
 
+<script>
+/* Channel pass-through: open the page as /kinscan/?src=instagram (or utm_source=...)
+   and both Play buttons carry that source into the Play install referrer, so
+   Play Console attributes the install to the post rather than to the page.
+   Without a src the buttons keep utm_source=kinscan_site. */
+(function () {
+  var params = new URLSearchParams(location.search);
+  var src = params.get('src') || params.get('utm_source');
+  try {
+    if (src) sessionStorage.setItem('kinscan_src', src);
+    else src = sessionStorage.getItem('kinscan_src');
+  } catch (e) {}
+  if (!src) return;
+  src = src.replace(/[^a-z0-9_-]/gi, '').slice(0, 40).toLowerCase();
+  if (!src) return;
+  document.querySelectorAll('a.badge').forEach(function (a) {
+    var medium = a.getAttribute('data-medium') || 'landing';
+    a.href = 'https://play.google.com/store/apps/details?id=com.optimnetlab.facialapp&referrer=' +
+      encodeURIComponent('utm_source=' + src + '&utm_medium=' + medium + '&utm_campaign=kinscan_site');
+  });
+})();
+</script>
 </body>
 </html>
