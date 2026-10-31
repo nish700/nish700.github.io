@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forkcount — Privacy Policy</title>
+<style>
+  body { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #1d1d1f; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.2rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .meta { color: #6e6e73; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #d2d2d7; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 0.95rem; }
+  th { background: #f5f5f7; }
+  code { background: #f5f5f7; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1c1c1e; color: #f2f2f7; }
+    th { background: #2c2c2e; }
+    th, td { border-color: #3a3a3c; }
+    code { background: #2c2c2e; }
+    .meta { color: #98989d; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Forkcount — Privacy Policy</h1>
+<p class="meta">Effective date: October 31, 2026</p>
+
+<p>Forkcount is a local-first eating-out tracker for Android. It is designed to work without an
+account and to collect as little data as possible. This policy explains what data the app handles,
+what (if anything) leaves your device, and the choices you have.</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>Everything you log — meals, costs, caps, habits, streaks — stays on your device.</li>
+  <li>There is no account, no sign-in, and no Forkcount server.</li>
+  <li>We collect anonymous usage events and crash reports to improve the app. Both can be
+      turned off in Settings, and neither includes your logs, costs, or identity.</li>
+  <li>We never sell data, and we never share it for advertising.</li>
+</ul>
+
+<h2>Data stored on your device</h2>
+<p>Your eating-out and cooking logs, meal types and costs, monthly cap, habit check-offs,
+reminder times, and app settings are stored in a local database on your device. Forkcount has no
+server and cannot read this data. It is included in your device's standard
+<strong>Android Auto Backup</strong> (backed up to your own Google Drive under Google's terms),
+so your history survives a reinstall or a new phone. You can turn device backup off in Android's
+system settings. You can also export your data yourself at any time via
+<em>Settings → Export to CSV</em>; the exported file goes only where you choose to save it.</p>
+
+<h2>Data that leaves your device</h2>
+<p>Three third-party services receive limited technical data. All transfers are encrypted in
+transit (HTTPS).</p>
+
+<table>
+  <tr><th>Service</th><th>Purpose</th><th>What it receives</th></tr>
+  <tr>
+    <td><strong>PostHog</strong> (analytics)</td>
+    <td>Understanding which features are used so we can improve the app</td>
+    <td>Anonymous usage events (e.g. "a log was made", "a cap was set", "the paywall was
+        viewed", app opened/backgrounded) tied to a random install identifier. We never call
+        identify(), so events are not linked to you. No costs, no log contents, no cap amounts,
+        no screen recordings, and no session replay are sent.</td>
+  </tr>
+  <tr>
+    <td><strong>Sentry</strong> (crash reporting)</td>
+    <td>Finding and fixing crashes and errors</td>
+    <td>Crash and error reports: stack traces, app version, device model, and OS version. No
+        personal information, screenshots, or screen contents.</td>
+  </tr>
+  <tr>
+    <td><strong>Google Play Billing / RevenueCat</strong> (purchases)</td>
+    <td>Processing optional Forkcount Plus purchases and restoring them</td>
+    <td>Purchase tokens and entitlement status from Google Play, tied to a random app user
+        identifier. Payment itself is handled entirely by Google Play; Forkcount never sees your
+        payment details, name, or email address.</td>
+  </tr>
+</table>
+
+<p>Forkcount contains no advertising SDKs and requests no location, contacts, camera, microphone,
+or storage permissions.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Opt out of analytics and crash reporting:</strong> turn off
+      <em>Settings → Share anonymous usage data</em> in the app. Nothing is sent afterwards.</li>
+  <li><strong>Notifications:</strong> the nightly check-in, habit reminders, and weekly summary
+      are optional and controlled in the app and in Android's notification settings.</li>
+  <li><strong>Delete your data:</strong> uninstalling the app (or clearing its storage) deletes
+      all locally stored data. To remove the Auto Backup copy as well, delete the app's backup
+      from your Google Drive backups or uninstall with backup disabled.</li>
+</ul>
+
+<h2>Data retention</h2>
+<p>Your logs stay on your device until you delete them or uninstall the app. Anonymous analytics
+events and crash reports are retained by PostHog and Sentry under their standard retention
+policies and are not linked to your identity. Since analytics are anonymous, we have no way to
+locate and delete events belonging to a specific person.</p>
+
+<h2>Children</h2>
+<p>Forkcount is not directed at children under 13 and does not knowingly collect any data from
+them.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app's data practices change — for example, if optional bank linking is ever added — this
+policy will be updated before those features ship, and the effective date above will change.
+Material changes will be noted in the app.</p>
+
+<h2>Contact</h2>
+<p>Forkcount is developed by Nishant Pandey (OptimNetLab).<br>
+Questions about this policy or your data: <a href="mailto:nishant7.pandey@gmail.com">nishant7.pandey@gmail.com</a></p>
+
+</body>
+</html>
